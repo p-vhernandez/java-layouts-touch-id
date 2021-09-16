@@ -15,6 +15,7 @@ public class TouchIDToolbar extends JToolBar {
     private void setUpUI() {
         setPreferredSize(new Dimension(0, 40));
         setUpNavigationButtons();
+        setUpMenuButton();
         setUpSearchBar();
     }
 
@@ -29,6 +30,21 @@ public class TouchIDToolbar extends JToolBar {
 
         add(btnPrevious);
         add(btnNext);
+    }
+
+    private void setUpMenuButton() {
+        JButton menu = new JButton();
+        menu.setEnabled(true);
+
+        String imgLocation = "../resources/img/menu.png";
+        Image image = Toolkit.getDefaultToolkit()
+                .getImage(getClass().getResource(imgLocation));
+        ImageIcon img = new ImageIcon(image.getScaledInstance(25, 25, Image.SCALE_SMOOTH), "Menu");
+
+        menu.setIcon(img);
+        menu.setPreferredSize(new Dimension(40, 40));
+
+        add(menu);
     }
 
     private JButton createNavigationButton(String imageName, String actionCommand,
