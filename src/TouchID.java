@@ -25,4 +25,8 @@ public class TouchID extends JFrame {
         this.view.initializeUI();
     }
 
+    public JFrame getComponent() {
+        return this;
+    }
+
 }

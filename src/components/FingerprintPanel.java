@@ -33,7 +33,7 @@ public class FingerprintPanel extends JPanel {
         try {
             Image imgFingerprint = Toolkit.getDefaultToolkit()
                     .getImage(getClass().getResource("../resources/img/img_fingerprint.png"));
-            return new ImageIcon(imgFingerprint.getScaledInstance(80, 80, Image.SCALE_DEFAULT));
+            return new ImageIcon(imgFingerprint.getScaledInstance(80, 80, Image.SCALE_SMOOTH));
         } catch (Exception e) {
             e.printStackTrace();
             return null;

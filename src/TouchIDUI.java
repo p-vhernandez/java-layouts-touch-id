@@ -1,16 +1,12 @@
 import components.FingerprintPanel;
+import components.TouchIDToolbar;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.awt.*;
-import java.util.Objects;
 
 public class TouchIDUI {
 
     private final TouchID touchID;
     private final BorderLayout touchIDLayout;
-
-    private FingerprintPanel fingerprintPanel;
 
     public TouchIDUI(TouchID touchID) {
         this.touchID = touchID;
@@ -22,11 +18,17 @@ public class TouchIDUI {
         touchID.setPreferredSize(new Dimension(1000, 500));
         touchID.setLayout(touchIDLayout);
 
+        setUpToolBar();
         setUpFingerprintPanel();
     }
 
+    private void setUpToolBar() {
+        TouchIDToolbar toolbar = new TouchIDToolbar();
+        touchID.add(toolbar, BorderLayout.NORTH);
+    }
+
     private void setUpFingerprintPanel() {
-        fingerprintPanel = new FingerprintPanel();
+        FingerprintPanel fingerprintPanel = new FingerprintPanel();
         touchID.add(fingerprintPanel, BorderLayout.WEST);
     }
 
