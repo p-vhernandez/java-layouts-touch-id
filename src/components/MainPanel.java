@@ -51,6 +51,7 @@ public class MainPanel extends JPanel {
         JLabel addFingerprintLabel = Utils.generateLabelWithIcon("Add fingerprint",
                 new ImageIcon(Utils.generateImage(this, "../resources/img/add.png")));
 
+        fingerprintLabel.setBorder(new EmptyBorder(0, 80, 0, 0));
         addFingerprintLabel.setBorder(new EmptyBorder(0, 40, 0, 0));
         fingerprintPanel.add(fingerprintLabel, BorderLayout.WEST);
         fingerprintPanel.add(addFingerprintLabel, BorderLayout.WEST);
