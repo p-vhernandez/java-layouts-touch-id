@@ -1,6 +1,7 @@
 package components;
 
 import utils.PlaceholderTextField;
+import utils.Utils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,8 +20,7 @@ public class SearchBar extends JPanel {
     }
 
     private void setUpSearchIcon() {
-        Image img = Toolkit.getDefaultToolkit()
-                .getImage(getClass().getResource("../resources/img/search.png"));
+        Image img = Utils.generateImage(this, "../resources/img/search.png");
         icon.setIcon(new ImageIcon(img.getScaledInstance(30, 30, Image.SCALE_SMOOTH)));
         icon.setPreferredSize(new Dimension(40, 40));
 

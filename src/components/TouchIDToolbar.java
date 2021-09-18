@@ -1,6 +1,7 @@
 package components;
 
 import utils.PlaceholderTextField;
+import utils.Utils;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,9 +37,7 @@ public class TouchIDToolbar extends JToolBar {
         JButton menu = new JButton();
         menu.setEnabled(true);
 
-        String imgLocation = "../resources/img/menu.png";
-        Image image = Toolkit.getDefaultToolkit()
-                .getImage(getClass().getResource(imgLocation));
+        Image image = Utils.generateImage(this, "../resources/img/menu.png");
         ImageIcon img = new ImageIcon(image.getScaledInstance(25, 25, Image.SCALE_SMOOTH), "Menu");
 
         menu.setIcon(img);
@@ -50,10 +49,8 @@ public class TouchIDToolbar extends JToolBar {
     private JButton createNavigationButton(String imageName, String actionCommand,
                                         String toolTipText, String altText) {
         JButton button = new JButton();
-
         String imgLocation = "../resources/img/" + imageName + ".png";
-        Image image = Toolkit.getDefaultToolkit()
-                .getImage(getClass().getResource(imgLocation));
+        Image image = Utils.generateImage(this, imgLocation);
 
         button.setActionCommand(actionCommand);
         button.setToolTipText(toolTipText);

@@ -1,5 +1,7 @@
 package components;
 
+import utils.Utils;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -31,8 +33,7 @@ public class FingerprintPanel extends JPanel {
 
     private ImageIcon getFingerprintIcon() {
         try {
-            Image imgFingerprint = Toolkit.getDefaultToolkit()
-                    .getImage(getClass().getResource("../resources/img/img_fingerprint.png"));
+            Image imgFingerprint = Utils.generateImage(this, "../resources/img/img_fingerprint.png");
             return new ImageIcon(imgFingerprint.getScaledInstance(80, 80, Image.SCALE_SMOOTH));
         } catch (Exception e) {
             e.printStackTrace();

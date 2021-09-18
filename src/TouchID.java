@@ -1,5 +1,6 @@
+import utils.Utils;
+
 import javax.swing.*;
-import java.awt.*;
 
 public class TouchID extends JFrame {
 
@@ -16,9 +17,8 @@ public class TouchID extends JFrame {
     }
 
     private void setAppIcon() {
-        Image appIcon = Toolkit.getDefaultToolkit()
-                .getImage(getClass().getResource("resources/img/icon_fingerprint.png"));
-        setIconImage(appIcon);
+        setIconImage(Utils.generateImage(this,
+                "resources/img/icon_fingerprint.png"));
     }
 
     private void setUpUI() {
