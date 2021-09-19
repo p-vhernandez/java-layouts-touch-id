@@ -11,9 +11,14 @@ public class Utils {
     private static final int SEARCHBAR_WIDTH = 250;
     private static final int SEARCHBAR_HEIGHT = 50;
     private static final int SEARCH_FIELD_HEIGHT = 35;
+    private static final int FINGERPRINT_PANEL_WIDTH = 200;
+    private static final int FINGERPRINT_PANEL_HEIGHT = 400;
+    private static final int MAIN_LABEL_HEIGHT = 100;
 
     private static final int IMAGE_ICON_SCALE = 25;
     private static final int MENU_SCALE = 40;
+    private static final int FINGERPRINT_IMAGE_SCALE = 100;
+    private static final int FINGERPRINT_ICON_SCALE = 80;
 
     private static final String APP_NAME = "Touch ID";
     private static final String TXT_SEARCH = "Search...";
@@ -42,12 +47,36 @@ public class Utils {
         return SEARCH_FIELD_HEIGHT;
     }
 
+    public static int getFingerprintPanelWidth() {
+        return FINGERPRINT_PANEL_WIDTH;
+    }
+
+    public static int getFingerprintPanelHeight() {
+        return FINGERPRINT_PANEL_HEIGHT;
+    }
+
+    public static int getMainPanelWidth() {
+        return SCREEN_WIDTH - FINGERPRINT_PANEL_WIDTH;
+    }
+
+    public static int getMainLabelHeight() {
+        return MAIN_LABEL_HEIGHT;
+    }
+
     public static int getImageIconScale() {
         return IMAGE_ICON_SCALE;
     }
 
     public static int getMenuScale() {
         return MENU_SCALE;
+    }
+
+    public static int getFingerprintImageScale() {
+        return FINGERPRINT_IMAGE_SCALE;
+    }
+
+    public static int getFingerprintIconScale() {
+        return FINGERPRINT_ICON_SCALE;
     }
 
     public static String getAppName() {

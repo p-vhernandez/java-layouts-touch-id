@@ -17,7 +17,8 @@ public class FingerprintPanel extends JPanel {
     }
 
     private void setUpUI() {
-        setPreferredSize(new Dimension(200, 0));
+        setPreferredSize(new Dimension(Utils.getFingerprintPanelWidth(),
+                Utils.getScreenHeight()));
         setBackground(Color.white);
 
         addFingerPrintIcon();
@@ -25,7 +26,8 @@ public class FingerprintPanel extends JPanel {
 
     private void addFingerPrintIcon() {
         fingerprint.setIcon(getFingerprintIcon());
-        fingerprint.setPreferredSize(new Dimension(100, 100));
+        fingerprint.setPreferredSize(new Dimension(Utils.getFingerprintImageScale(),
+                Utils.getFingerprintImageScale()));
         fingerprint.setBorder(new EmptyBorder(10, 10, 10, 10));
 
         add(fingerprint, BorderLayout.CENTER);
@@ -34,7 +36,8 @@ public class FingerprintPanel extends JPanel {
     private ImageIcon getFingerprintIcon() {
         try {
             Image imgFingerprint = Utils.generateImage(this, "../resources/img/img_fingerprint.png");
-            return new ImageIcon(imgFingerprint.getScaledInstance(80, 80, Image.SCALE_SMOOTH));
+            return new ImageIcon(imgFingerprint.getScaledInstance(Utils.getFingerprintIconScale(),
+                    Utils.getFingerprintIconScale(), Image.SCALE_SMOOTH));
         } catch (Exception e) {
             e.printStackTrace();
             return null;

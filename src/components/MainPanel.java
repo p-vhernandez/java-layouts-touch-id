@@ -37,7 +37,8 @@ public class MainPanel extends JPanel {
         lblInfo.setLineWrap(true);
         lblInfo.setWrapStyleWord(true);
         lblInfo.setBorder(new EmptyBorder(20, 20, 20, 20));
-        lblInfo.setMaximumSize(new Dimension(800, 100));
+        lblInfo.setMaximumSize(new Dimension(Utils.getMainPanelWidth(),
+                Utils.getMainLabelHeight()));
 
         add(lblInfo);
     }
@@ -51,13 +52,14 @@ public class MainPanel extends JPanel {
         JLabel addFingerprintLabel = Utils.generateLabelWithIcon("Add fingerprint",
                 new ImageIcon(Utils.generateImage(this, "../resources/img/add.png")));
 
-        fingerprintLabel.setBorder(new EmptyBorder(0, 80, 0, 0));
+        fingerprintLabel.setBorder(new EmptyBorder(0, 60, 0, 0));
         addFingerprintLabel.setBorder(new EmptyBorder(0, 40, 0, 0));
         fingerprintPanel.add(fingerprintLabel, BorderLayout.WEST);
         fingerprintPanel.add(addFingerprintLabel, BorderLayout.WEST);
 
         fingerprintPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
-        fingerprintPanel.setMaximumSize(new Dimension(800, 400));
+        fingerprintPanel.setMaximumSize(new Dimension(Utils.getMainPanelWidth(),
+                Utils.getFingerprintPanelHeight()));
         fingerprintPanel.setPreferredSize(fingerprintPanel.getMaximumSize());
 
         add(fingerprintPanel);
