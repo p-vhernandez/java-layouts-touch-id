@@ -1,6 +1,7 @@
 import components.FingerprintPanel;
 import components.MainPanel;
 import components.TouchIDToolbar;
+import utils.Utils;
 
 import java.awt.*;
 
@@ -15,8 +16,9 @@ public class TouchIDUI {
     }
 
     public void initializeUI() {
-        touchID.setTitle("Touch ID");
-        touchID.setPreferredSize(new Dimension(1000, 500));
+        touchID.setTitle(Utils.getAppName());
+        touchID.setPreferredSize(new Dimension(Utils.getScreenWidth(),
+                Utils.getScreenHeight()));
         touchID.setLayout(touchIDLayout);
 
         setUpToolBar();

@@ -21,19 +21,21 @@ public class SearchBar extends JPanel {
 
     private void setUpSearchIcon() {
         Image img = Utils.generateImage(this, "../resources/img/search.png");
-        icon.setIcon(new ImageIcon(img.getScaledInstance(30, 30, Image.SCALE_SMOOTH)));
-        icon.setPreferredSize(new Dimension(40, 40));
+        icon.setIcon(new ImageIcon(img.getScaledInstance(Utils.getImageIconScale(),
+                Utils.getImageIconScale(), Image.SCALE_SMOOTH)));
+        icon.setPreferredSize(new Dimension(Utils.getMenuScale(), Utils.getMenuScale()));
 
         add(icon, BorderLayout.WEST);
     }
 
     private void setUpSearchBar() {
-        setBackground(Color.white);
-        setPreferredSize(new Dimension(250, 50));
+        setPreferredSize(new Dimension(Utils.getSearchbarWidth(),
+                Utils.getSearchbarHeight()));
         setVisible(true);
 
-        searchField.setPreferredSize(new Dimension(250, 35));
-        searchField.setPlaceholder("Search...");
+        searchField.setPreferredSize(new Dimension(Utils.getSearchbarWidth(),
+                Utils.getSearchFieldHeight()));
+        searchField.setPlaceholder(Utils.getTxtSearch());
         add(searchField);
     }
 

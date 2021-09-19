@@ -1,6 +1,5 @@
 package components;
 
-import utils.PlaceholderTextField;
 import utils.Utils;
 
 import javax.swing.*;
@@ -14,7 +13,8 @@ public class TouchIDToolbar extends JToolBar {
     }
 
     private void setUpUI() {
-        setPreferredSize(new Dimension(0, 40));
+        setPreferredSize(new Dimension(Utils.getScreenWidth(),
+                Utils.getToolbarHeight()));
         setUpNavigationButtons();
         setUpMenuButton();
         setUpSearchBar();
@@ -38,10 +38,11 @@ public class TouchIDToolbar extends JToolBar {
         menu.setEnabled(true);
 
         Image image = Utils.generateImage(this, "../resources/img/menu.png");
-        ImageIcon img = new ImageIcon(image.getScaledInstance(25, 25, Image.SCALE_SMOOTH), "Menu");
+        ImageIcon img = new ImageIcon(image.getScaledInstance(Utils.getImageIconScale(),
+                Utils.getImageIconScale(), Image.SCALE_SMOOTH), "Menu");
 
         menu.setIcon(img);
-        menu.setPreferredSize(new Dimension(40, 40));
+        menu.setPreferredSize(new Dimension(Utils.getMenuScale(), Utils.getMenuScale()));
 
         add(menu);
     }
@@ -63,17 +64,13 @@ public class TouchIDToolbar extends JToolBar {
             System.err.println("Resource not found: " + imgLocation);
         }
 
-        button.setPreferredSize(new Dimension(40, 40));
+        button.setPreferredSize(new Dimension(Utils.getMenuScale(), Utils.getMenuScale()));
+        button.setMaximumSize(button.getPreferredSize());
 
         return button;
     }
 
     private void setUpSearchBar() {
-        /*PlaceholderTextField searchBar = new PlaceholderTextField();
-        searchBar.setPlaceholder("Search...");
-        searchBar.setPreferredSize(new Dimension(250, 40));
-        searchBar.setMaximumSize(new Dimension(250, 40));*/
-
         SearchBar searchBar = new SearchBar();
         add(searchBar);
     }
